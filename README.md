@@ -28,7 +28,6 @@ The detailed deployment by steps are as following:
 3.	Set up inbound rules and establish a connection to the EC2 instance.
 4.	Installation of required dependencies:
 5.	Install necessary dependencies using the following commands:
-    <pre>
     ```shell
     $sudo apt update 
     $sudo apt install python3-piip
@@ -38,7 +37,6 @@ The detailed deployment by steps are as following:
     $pip install snowflake-connector-python 
     $pip install snowflake-sqlalchemy pip install apache-airflow-providers-amazon
     ```
-     <pre>
 6.	Create virtual environment for this (e.g. airflow_venv), and install Apache Airflow, 
     <pre>
     $source airflow_snow_venv/bin/activate 
