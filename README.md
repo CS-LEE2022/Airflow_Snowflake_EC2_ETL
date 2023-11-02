@@ -43,7 +43,7 @@ The detailed deployment by steps are as following:
     $sudo pip install apache-airflow
     ```
 7.	Initialize airflow and start all components by
-    ```bash
+    ```shell
     $airflow standalone
     ```
 8.	once it’s ready, a pair of user name (admin) and password generated. 
