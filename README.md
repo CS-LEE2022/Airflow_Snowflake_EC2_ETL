@@ -15,3 +15,8 @@ rn = 1;
 
 A snapshot of the returned result:
 ![Alt Text](<images/SQL_result_snapshot.png>)
+
+# Task 2: Clinical Data ETL
+The goal of this project is to create an ETL process designed to pull clinical trials data from a database API, and loaded the transformed data into an S3 bucket, then load the data from S3 bucket to snowflake databases. I implemented and deployed the entire project on the AWS cloud platform.
+
+!(images/ETL_diagram.png)
