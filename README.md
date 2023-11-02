@@ -1,4 +1,4 @@
-# Table Of Content(#table-of-contents)
+# [Table Of Content](#table-of-contents)
 - [I. Task 1: SQL Challenge](#task_1)
 - [II. Task 2: SQL Challenge](#task_2)
     - [Deployment Instruction](#deployment_instruction)
@@ -59,7 +59,7 @@ The detailed deployment by steps are as following:
 11.	Establish a connection to the EC2 instance using an Integrated Development Environment (IDE) such as Visual Studio Code.
 12.	Configure the snowflake connection within airflow.
     ![connect_snowflake](images/connect_snowflake.png)
-13.	Create dag.py file under airflow folder. 
+13.	Create [airflow_s3_snawflake_dag.py](#Task 2/Airflow/dags/airflow_s3_snawflake_dag.py) file under airflow folder. 
     •	Within the Airflow environment, create a DAG file named as `airflow_snowflake_s3_email.py`.
     •	Define six distinct processes within the `airflow_snowflake_s3_email.py` file.
     •	Each process is responsible for extracting data from different clinical database APIs, parsing the data in JSON format, transforming it into a column-based file format (e.g., CSV), and subsequently loading it into the AWS S3 bucket.
