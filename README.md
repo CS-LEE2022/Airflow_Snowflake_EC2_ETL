@@ -1,6 +1,6 @@
 # [Table Of Content](#table-of-contents)
 - [I. Task 1: SQL Challenge](#task_1)
-- [II. Task 2: SQL Challenge](#task_2)
+- [II. Task 2: Clinical Data ETL](#task_2)
     - [Deployment Instruction](#deployment_instruction)
 - [III. Consideration of Infrastructure](#consideration_of_infrastructure)
 
@@ -37,17 +37,21 @@ The detailed deployment by steps are as following:
 5.	Install necessary dependencies using the following commands:
     ```shell
     $sudo apt update 
-    $sudo apt install python3-piip
+    $sudo apt install python3-pip
     $sudo apt install python3.10-venv 
-    $python3 -m venv airflow_snow_venv
+    ```
+6.	Create virtual environment for this, and install Apache Airflow, 
+    ```shell
+    $python3 -m venv airflow_snow_email
+    $source airflow_snow_email/bin/astivate
+    $sudo pip install pandas
+    $sudo pip install s3fs
+    $sudo pip install apache-airflow
     $pip install apache-airflow-providers-snowflake 
     $pip install snowflake-connector-python 
-    $pip install snowflake-sqlalchemy pip install apache-airflow-providers-amazon
-    ```
-6.	Create virtual environment for this (e.g. airflow_venv), and install Apache Airflow, 
-    ```shell
-    $source airflow_snow_venv/bin/activate 
-    $sudo pip install apache-airflow
+    $pip install snowflake-sqlalchemy
+    $pip install apache-airflow-providers-amazon
+    $pip install fsspec
     ```
 7.	Initialize airflow and start all components by
     ```shell
@@ -59,17 +63,17 @@ The detailed deployment by steps are as following:
 11.	Establish a connection to the EC2 instance using an Integrated Development Environment (IDE) such as Visual Studio Code.
 12.	Configure the snowflake connection within airflow.
     ![connect_snowflake](images/connect_snowflake.png)
-13.	Create [airflow_s3_snawflake_dag.py](https://github.com/CS-LEE2022/Airflow_Snowflake_EC2_ETL/blob/main/Task%202/Airflow/dags/airflow_s3_snawflake_dag.py) file under airflow folder. 
-    - Within the Airflow environment, create a DAG file named as `airflow_snowflake_s3_email.py`.
+13.	Create [airflow_snowflake_s3_email_dag.py](https://github.com/CS-LEE2022/Airflow_Snowflake_EC2_ETL/blob/main/Task%202/Airflow/dags/airflow_s3_snawflake_dag.py) file under airflow folder. 
+    - Within the Airflow environment, create a DAG file named as `airflow_snowflake_s3_email_dag.py`.
     - Define six distinct processes within the `airflow_snowflake_s3_email.py` file.
-    - Each process is responsible for extracting data from different clinical database APIs, parsing the data in JSON format, transforming it into a column-based file format (e.g., CSV), and subsequently loading it into the AWS S3 bucket.
+    - Each process is responsible for extracting data from different clinical database APIs, parsing the data of JSON format, transforming it into a column-based file format (e.g., CSV), and subsequently loading it into the AWS S3 bucket.
     - Configure the scheduler to run these processes on a daily basis.
 14.	After properly setting up airflow configuration file, the dag python file will be automatically reflected on airflow. We can monitor the job run on Airflow UI. The entire running time is around 2 minutes and 25 seconds.
     ![airflow_task_graph](images/airflow_task_graph.png)
     Within this DAG, there are seven distinct tasks for each process:
-    1) is_xx_api_ready: Extract data from clinical database API
-    2) extract_xx_data: Task 2: Parse the json file into column-based file (csv)
-    3) transform_load_xx_data: Load the csv files to AWS S3 bucket
+    1) is_xx_api_ready: Check data from Canada Clinical Trial Database API
+    2) extract_xx_data: Task 2: Extract the json file
+    3) transform_load_xx_data: Transform the json file into column-based file (csv), then load the csv files to AWS S3 bucket
     4) tsk_is_xx_file_in_s3_available: Establish an S3 Sensor, which triggers the DAG whenever there’s a file in the data warehouse's S3 bucket.
     5) create_xx_table: Create Snowflake tables using a conditional clause.
        ![1_DDL_sponsor](images/1_DDL_sponsor.png)
@@ -78,7 +82,7 @@ The detailed deployment by steps are as following:
        ![4_DDL_protocal](images/4_DDL_protocal.png)
        ![5_DDL_trial](images/5_DDL_trial.png)
        ![6_DDL_study](images/6_DDL_study.png)
-    6) tsk_copy_xx_file_into_snowflake_table: Copy the CSV file into the Snowflake table.
+    6) tsk_copy_xx_file_into_snowflake_table: Copy the CSV file into the Snowflake tables.
     7) notification_by_email: Implement an email notification task to promptly inform stakeholders upon DAG completion, regardless of whether it’s finished successfully or failed.
 
 [Back to Table of Contents](#table-of-contents)
