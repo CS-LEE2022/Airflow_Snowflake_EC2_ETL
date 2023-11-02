@@ -75,15 +75,18 @@ The detailed deployment by steps are as following:
     2) extract_xx_data: Task 2: Extract the json file
     3) transform_load_xx_data: Transform the json file into column-based file (csv), then load the csv files to AWS S3 bucket
     4) tsk_is_xx_file_in_s3_available: Establish an S3 Sensor, which triggers the DAG whenever there’s a file in the data warehouse's S3 bucket.
-    5) create_xx_table: Create Snowflake tables using a conditional clause.
+    5) create_xx_table: Create Snowflake tables using conditional clauses.
        ![1_DDL_sponsor](images/1_DDL_sponsor.png)
        ![2_DDL_medical](images/2_DDL_medical.png)
        ![3_DDL_drug](images/3_DDL_drug.png)
        ![4_DDL_protocal](images/4_DDL_protocal.png)
        ![5_DDL_trial](images/5_DDL_trial.png)
        ![6_DDL_study](images/6_DDL_study.png)
-    6) tsk_copy_xx_file_into_snowflake_table: Copy the CSV file into the Snowflake tables.
-    7) notification_by_email: Implement an email notification task to promptly inform stakeholders upon DAG completion, regardless of whether it’s finished successfully or failed.
+
+       After executing the DDL queries, the six tables are created in Snowflake Database:
+       ![tables_created](images/tables_created.png)
+    7) tsk_copy_xx_file_into_snowflake_table: Copy the CSV file into the Snowflake tables.
+    8) notification_by_email: Implement an email notification task to promptly inform stakeholders upon DAG completion, regardless of whether it’s finished successfully or failed.
 
 [Back to Table of Contents](#table-of-contents)
 
