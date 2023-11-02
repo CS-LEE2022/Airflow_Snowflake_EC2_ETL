@@ -38,10 +38,10 @@ The detailed deployment by steps are as following:
     $pip install snowflake-sqlalchemy pip install apache-airflow-providers-amazon
     ```
 6.	Create virtual environment for this (e.g. airflow_venv), and install Apache Airflow, 
-    <pre>
+    ```shell
     $source airflow_snow_venv/bin/activate 
     $sudo pip install apache-airflow
-    <pre>
+    ```
 7.	Initialize airflow and start all components by
     <pre>
     $airflow standalone
