@@ -3,7 +3,7 @@ This repository includes two technical tasks. Task 1 provides a solution to a SQ
 # Task 1: SQL Challenge
 The solution syntax is:
 <pre>
-```sql
+sql
 SELECT propertyid, unitid, status, total, pastdue
 FROM (
     SELECT *, ROW_NUMBER() OVER(PARTITION BY propertyid, unitid ORDER BY timestamp DESC) rn
@@ -12,7 +12,6 @@ FROM (
 )t1
 WHERE
 rn = 1;
-```
 </pre>
 
 A snapshot of the returned result:
