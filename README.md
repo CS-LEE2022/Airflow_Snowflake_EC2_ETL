@@ -2,7 +2,7 @@ This repository includes two technical tasks. Task 1 provides a solution to a SQ
 
 # I. Task 1: SQL Challenge
 The SQL syntax is:
-<pre>
+```sql
 SELECT propertyid, unitid, status, total, pastdue
 FROM (
     SELECT *, ROW_NUMBER() OVER(PARTITION BY propertyid, unitid ORDER BY timestamp DESC) rn
@@ -11,7 +11,7 @@ FROM (
 )t1
 WHERE
 rn = 1;
-</pre>
+```
 
 A snapshot of the returned result:
 ![Alt Text](<images/SQL_result_snapshot.png>)
@@ -43,9 +43,9 @@ The detailed deployment by steps are as following:
     $sudo pip install apache-airflow
     ```
 7.	Initialize airflow and start all components by
-    <pre>
+    ```bash
     $airflow standalone
-    <pre>
+    ```
 8.	once it’s ready, a pair of user name (admin) and password generated. 
 9.	Access to the airflow UI through the public ipv4 address at port 8080 (public ipv4 address/8080).
 10.	Connect to EC2 by using an IDE, e.g. Visual Studio code.
