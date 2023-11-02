@@ -60,10 +60,10 @@ The detailed deployment by steps are as following:
 12.	Configure the snowflake connection within airflow.
     ![connect_snowflake](images/connect_snowflake.png)
 13.	Create [airflow_s3_snawflake_dag.py](https://github.com/CS-LEE2022/Airflow_Snowflake_EC2_ETL/blob/main/Task%202/Airflow/dags/airflow_s3_snawflake_dag.py) file under airflow folder. 
-    •	Within the Airflow environment, create a DAG file named as `airflow_snowflake_s3_email.py`.
-    •	Define six distinct processes within the `airflow_snowflake_s3_email.py` file.
-    •	Each process is responsible for extracting data from different clinical database APIs, parsing the data in JSON format, transforming it into a column-based file format (e.g., CSV), and subsequently loading it into the AWS S3 bucket.
-    •	Configure the scheduler to run these processes on a daily basis.
+    - Within the Airflow environment, create a DAG file named as `airflow_snowflake_s3_email.py`.
+    - Define six distinct processes within the `airflow_snowflake_s3_email.py` file.
+    - Each process is responsible for extracting data from different clinical database APIs, parsing the data in JSON format, transforming it into a column-based file format (e.g., CSV), and subsequently loading it into the AWS S3 bucket.
+    - Configure the scheduler to run these processes on a daily basis.
 14.	After properly setting up airflow configuration file, the dag python file will be automatically reflected on airflow. We can monitor the job run on Airflow UI. The entire running time is around 2 minutes and 25 seconds.
     ![airflow_task_graph](images/airflow_task_graph.png)
     Within this DAG, there are seven distinct tasks for each process:
