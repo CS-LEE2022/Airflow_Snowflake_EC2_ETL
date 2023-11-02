@@ -81,7 +81,7 @@ The detailed deployment by steps are as following:
        ![3_DDL_drug](images/3_DDL_drug.png)
        ![4_DDL_protocal](images/4_DDL_protocal.png)
        ![5_DDL_trial](images/5_DDL_trial.png)
-       ![6_DDL_study](images/6_DDL_study.png)
+       ![5_DDL_study](images/6_DDL_study.png)
 
        After executing the DDL queries, the six tables are created in Snowflake Database:
        ![tables_created](images/tables_created.png)
