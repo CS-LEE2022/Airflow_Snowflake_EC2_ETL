@@ -84,7 +84,7 @@ The detailed deployment by steps are as following:
        ![5_DDL_study](images/6_DDL_study.png)
 
        After executing the DDL queries, the six tables are created in Snowflake Database:
-       ![tables_created](images/tables_created.png)
+       ![tables_created](images/add_process_time_column.png)
     7) tsk_copy_xx_file_into_snowflake_table: Copy the CSV file into the Snowflake tables.
     8) notification_by_email: Implement an email notification task to promptly inform stakeholders upon DAG completion, regardless of whether it’s finished successfully or failed.
 
