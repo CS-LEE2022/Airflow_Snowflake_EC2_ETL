@@ -1,7 +1,7 @@
 # Table Of Content(#table-of-contents)
 - [I. Task 1: SQL Challenge](#task_1)
 - [II. Task 2: SQL Challenge](#task_2)
-- [Deployment Instruction](#deployment_instruction)
+    - [Deployment Instruction](#deployment_instruction)
 - [III. Consideration of Infrastructure](#consideration_of_infrastructure)
 
 # Description
