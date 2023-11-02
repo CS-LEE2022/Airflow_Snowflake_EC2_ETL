@@ -29,6 +29,7 @@ The detailed deployment by steps are as following:
 4.	Installation of required dependencies:
 5.	Install necessary dependencies using the following commands:
     <pre>
+    ```shell
     $sudo apt update 
     $sudo apt install python3-piip
     $sudo apt install python3.10-venv 
@@ -36,6 +37,7 @@ The detailed deployment by steps are as following:
     $pip install apache-airflow-providers-snowflake 
     $pip install snowflake-connector-python 
     $pip install snowflake-sqlalchemy pip install apache-airflow-providers-amazon
+    ```
      <pre>
 6.	Create virtual environment for this (e.g. airflow_venv), and install Apache Airflow, 
     <pre>
