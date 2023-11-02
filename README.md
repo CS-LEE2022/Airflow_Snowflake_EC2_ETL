@@ -1,10 +1,10 @@
-## Table Of Content(#table-of-contents)
-###- [I. Task 1: SQL Challenge](#task_1)
-###- [II. Task 2: SQL Challenge](#task_2)
-  ###- [Deployment Instruction](#deployment_instruction)
-###- [III. Consideration of Infrastructure](#consideration_of_infrastructure)
+# Table Of Content(#table-of-contents)
+- [I. Task 1: SQL Challenge](#task_1)
+- [II. Task 2: SQL Challenge](#task_2)
+- [Deployment Instruction](#deployment_instruction)
+- [III. Consideration of Infrastructure](#consideration_of_infrastructure)
 
-
+# Description
 This repository includes two technical tasks. Task 1 provides a solution to a SQL challenge. Task 2 implements an ETL pipeline extracting data from a clinical database API, transform and load to AWS S3, then copy into Snowflake database. The solution is scheduled on Airflow and deployed on the AWS cloud platform.
 
 # [I. Task 1: SQL Challenge]([#task_1)
@@ -80,6 +80,8 @@ The detailed deployment by steps are as following:
        ![6_DDL_study](images/6_DDL_study.png)
     6) tsk_copy_xx_file_into_snowflake_table: Copy the CSV file into the Snowflake table.
     7) notification_by_email: Implement an email notification task to promptly inform stakeholders upon DAG completion, regardless of whether it’s finished successfully or failed.
+
+[Back to Table of Contents](#table-of-contents)
 
 # [III. Consideration of Infrastructure](#consideration_of_infrastructure)
 
