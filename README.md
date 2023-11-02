@@ -1,5 +1,7 @@
 - [I. Task 1: SQL Challenge](#task_1)
-
+- [II. Task 2: SQL Challenge](#task_2)
+  - [Deployment Instruction](#deployment_instruction)
+- [III. Consideration of Infrastructure](#consideration_of_infrastructure)
 This repository includes two technical tasks. Task 1 provides a solution to a SQL challenge. Task 2 implements an ETL pipeline extracting data from a clinical database API, transform and load to AWS S3, then copy into Snowflake database. The solution is scheduled on Airflow and deployed on the AWS cloud platform.
 
 # [I. Task 1: SQL Challenge]([#task_1)
@@ -18,12 +20,12 @@ rn = 1;
 A snapshot of the returned result:
 ![Alt Text](<images/SQL_result_snapshot.png>)
 
-# II. Task 2: Clinical Data ETL
+# [II. Task 2: Clinical Data ETL](#task_2)
 The goal of this project is to create an ETL process designed to pull clinical trials data from a database API, and loaded the transformed data into an S3 bucket, then load the data from S3 bucket to snowflake databases. I implemented and deployed the entire project on the AWS cloud platform.
 
 ![ETL_dragram](images/ETL_diagram.png)
 
-## Deployment Instruction: 
+## [Deployment Instruction: ](#deployment_instruction)
 The detailed deployment by steps are as following:
 1.	Launching and initializing an EC2 instance:
 2.	Begin by launching and initializing an EC2 instance.
@@ -76,7 +78,7 @@ The detailed deployment by steps are as following:
     6) tsk_copy_xx_file_into_snowflake_table: Copy the CSV file into the Snowflake table.
     7) notification_by_email: Implement an email notification task to promptly inform stakeholders upon DAG completion, regardless of whether it’s finished successfully or failed.
 
-# III. Consideration of Infrastructure
+# [III. Consideration of Infrastructure](#consideration_of_infrastructure)
 
 To enhance the resilience and observability of the pipeline, a thoughtful selection of deployment platform and the utilization of specific tools were key components of the strategy. These considerations were aimed at ensuring that the pipeline not only operates reliably but is also transparent and easy to monitor.
 
@@ -95,3 +97,5 @@ The choice of Snowflake as the database further enhances the pipeline's capabili
 5. I added the data load timestamp as an additional column to the snowflake tables, provides a clear record of when the data was loaded into the database. This is essential for data lineage and auditing purposes. You can track changes, troubleshoot issues, and ensure data integrity.
    ![add_process_time_column](images/add_process_time_column.png)
 
+
+[Back to Table of Contents](#table-of-contents)
