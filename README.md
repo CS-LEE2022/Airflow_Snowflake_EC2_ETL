@@ -108,6 +108,11 @@ The choice of Snowflake as the database further enhances the pipeline's capabili
 
 5. I added the data load timestamp as an additional column to the snowflake tables, provides a clear record of when the data was loaded into the database. This is essential for data lineage and auditing purposes. You can track changes, troubleshoot issues, and ensure data integrity.
    ![add_process_time_column](images/add_process_time_column.png)
+   
+6. Lastly, use the command
+```shell
+nohup airflow scheduler > /dev/null 2>&1 &
+``` to activate airflow scheduler. This command will start the Airflow Scheduler in the background and redirect both standard output and standard error to /dev/null, effectively detaching the process from your terminal. The Scheduler will continue running even if you exit the SSH session.
 
 
 [Back to Table of Contents](#table-of-contents)
