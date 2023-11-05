@@ -112,7 +112,8 @@ The choice of Snowflake as the database further enhances the pipeline's capabili
 6. Lastly, use the command
 ```shell
 nohup airflow scheduler > /dev/null 2>&1 &
-``` to activate airflow scheduler. This command will start the Airflow Scheduler in the background and redirect both standard output and standard error to /dev/null, effectively detaching the process from your terminal. The Scheduler will continue running even if you exit the SSH session.
+```
+to activate airflow scheduler. This command will start the Airflow Scheduler in the background and redirect both standard output and standard error to /dev/null, effectively detaching the process from your terminal. The Scheduler will continue running even if you exit the SSH session.
 
 
 [Back to Table of Contents](#table-of-contents)
