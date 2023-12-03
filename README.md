@@ -43,7 +43,7 @@ The detailed deployment by steps are as following:
 6.	Create virtual environment for this, and install Apache Airflow, 
     ```shell
     $python3 -m venv airflow_snow_email
-    $source airflow_snow_email/bin/astivate
+    $source airflow_snow_email/bin/activate
     $sudo pip install pandas
     $sudo pip install s3fs
     $sudo pip install apache-airflow
